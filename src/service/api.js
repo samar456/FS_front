@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URI = 'https://fs-back-k07g.onrender.com';
+const API_URI = 'https://localhost:10000';
 
 export const uploadFile = async (data) => {
     try {
