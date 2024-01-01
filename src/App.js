@@ -18,7 +18,7 @@ function App() {
         data.append("file", file);
 
         const response = await uploadFile(data);
-        setResult(response.path);
+         await setResult(response.path);
       }
     }
     getImage();
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className='container'>
-      <img src={url} className='img' />
+      <img src={url} className='img' alt ="img" />
       <div className='wrapper'>
         <h1>Simple file sharing!</h1>
         <p>Upload and share the download link.</p>
@@ -43,7 +43,7 @@ function App() {
           onChange={(e) => setFile(e.target.files[0])}
         />
 
-        <a href={result} target='_blank'>{result}</a> 
+        <a href={result} target='_blank' rel="noreferrer">{result}</a> 
       </div>
     </div>
   );
