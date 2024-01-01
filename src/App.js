@@ -18,7 +18,13 @@ function App() {
         data.append("file", file);
 
         const response = await uploadFile(data);
-         await setResult(response.path);
+        let originalUrl = response.path;
+        console.log(originalUrl)
+        let newBaseUrl = "https://fs-back-k07g.onrender.com";
+   
+   let updatedUrl = originalUrl.replace("http://localhost:8000", newBaseUrl);
+   
+            await setResult(updatedUrl);
       }
     }
     getImage();
